@@ -17,7 +17,7 @@ export default function About(){
                 </li>
             </ul>
             <div style={{"width":"100vw"}}>
-                <img src={Wolf} alt="wolf head" style={{"width":"20%"}} />
+                <img src={Wolf} alt="wolf head" style={{"width":"25%"}} />
             </div>
         </center>
         </div>

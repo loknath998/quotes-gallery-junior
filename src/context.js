@@ -66,7 +66,9 @@ function RowProvider({children}){
             });
             
             await doc.loadInfo();
+            console.log('doc:',doc);
             const sheet = doc.sheetsByIndex[0];
+            console.log('sheet:',sheet);
             const rows1 = await sheet.getRows();
             console.log('rows1',rows1);
             await sheet.addRow({
