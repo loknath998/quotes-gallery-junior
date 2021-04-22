@@ -1,38 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --mainTransition:all 0.3s linear;
+  --mainGrey:rgb(63, 63, 63); 
+}
+body{
+  /* background:linear-gradient(-135deg, #5b919bb6, #5758689a) ; */
+  background: rgba(252, 13, 25, 0.219);
+}
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+}
+.heading{
+  padding: .5rem 5px;
+  font-size:1.5rem;
+  text-decoration: underline;
+  display: grid;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-template-columns: 1fr 7fr 1fr;
 }
 
-.App-link {
-  color: #61dafb;
+.card{
+  border-radius: 20px;
+  background-color: rgba(243, 151, 98, 0.411);
+  padding: .5rem .3rem;
+  font-size: 1rem;
+  height: 100%;
+  /* font-weight: 500; */
+  transition:var(--mainTransition);
+  box-shadow: 2px 2px 4px  var(--mainGrey);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quote{
+  font-family: 'Raleway', sans-serif;;
+}
+.quoter{
+  text-align: right;
+  padding-right:5px ;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  font-style: italic;
+}
+.quoter::before{
+  content: "-";
+  clear: both;
+  text-transform: capitalize;
+}
+.category{
+  background-color: grey;
+  color: #f4f4f4;
+  width: fit-content;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+}
+.card:hover{
+  transform:translateY(-2px) scale(1.1);
+}
+.input-form{
+  padding-top: 2rem;
+}
+.wrapper{
+  /* border:1px solid black; */
+  padding: 1rem ;
+  width: 100%;
+  background-color:#fff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.wrapper .input-data{
+  width: 100%;
+  height: 40px;
+  position:relative;
+  
+}
+.wrapper .text-area{
+  height: 65px;
+}
+.wrapper .input-data input{
+  height:100%;
+  width: 100%;
+  border:none;
+  outline: none;
+  font-size:1.1rem;
+  border-bottom: 2px solid silver;
+}
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+  transform:translateY(-20px);
+  font-size: 0.9rem;
+  color:#4158d0;
+}
+.wrapper .input-data label{
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  color:grey;
+  pointer-events:none;
+  transition:all 0.3s ease;
+}
+.wrapper .input-data textarea{
+  height:100%;
+  width: 100%;
+  border:none;
+  outline: none;
+  font-size:1.1rem;
+  border-bottom: 2px solid silver;
+}
+.input-data textarea:focus ~ label,
+.input-data textarea:valid ~ label{
+  transform:translateY(-52px);
+  font-size: 0.9rem;
+  color:#4158d0;
+}
+.wrapper .input-data .underline{
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+}
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background:#4158d0;
+  transform:scaleX(0);
+  transition: transform 0.5s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before{
+  transform: scaleX(1);
+}
+.input-data textarea:focus ~ .underline:before,
+.input-data textarea:valid ~ .underline:before{
+  transform: scaleX(1);
+}
+.button{
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  border:3px solid #414ad0;
+  transition: transform 0.3s ease;
+  font-size: 1.3rem;
+}
+.button:hover , .button:focus{
+  transform: scale(1.1);
+  box-shadow: 2px 0px 3px rgb(0, 0, 0);
+}
+.button-link{
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 0.3rem;
+  outline: none;
+  cursor: pointer;
+  border:2px solid #414ad0;
+  transition: transform 0.3s ease;
+  font-size: 1.3rem;
+}
+.button-link:hover , .button:focus{
+  transform: scale(1.05);
+  box-shadow: 2px 0px 3px rgb(0, 0, 0);
 }
