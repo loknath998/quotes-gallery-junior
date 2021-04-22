@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {createContext, useState,useEffect} from 'react';
 
 import {GoogleSpreadsheet} from 'google-spreadsheet';
@@ -42,7 +43,7 @@ function RowProvider({children}){
       setLoading(false);
     }
     useEffect(()=>{
-      getSheets();
+        getSheets();
     //   setLoading(false);
     },[]);
     
