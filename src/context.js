@@ -58,7 +58,7 @@ function RowProvider({children}){
             setLoading(true);
             const doc = new GoogleSpreadsheet(process.env.REACT_APP_SHEET_ID);
             // console.log('sheet id',process.env.REACT_APP_SHEET_ID);
-            // console.log('client mail',process.env.REACT_APP_CLIENT_EMAIL);
+            console.log('client mail\n',process.env.REACT_APP_CLIENT_EMAIL);
             console.log('private key');
             console.log(process.env.REACT_APP_PRIVATE_KEY);
             await doc.useServiceAccountAuth({
